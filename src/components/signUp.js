@@ -15,20 +15,20 @@ function SignUp() {
             <div className='personalisationRow'>
             
                 <div className='experienceButtons'>
-                    <label><u>Fitness Experience</u></label><br></br>
+                    <label><u className='subheadings'>Fitness Experience</u></label><br></br>
                     <button className='beginner'>Beginner</button>
                     <button className='intermediate'>Intermediate</button>
                     <button className='advanced'>Advanced</button>
                 </div>
                 
                 <div className='trainingType'>
-                <label><u>Type of Training</u></label><br></br>
+                <label><u className='subheadings'>Type of Training</u></label><br></br>
                     <div className='trainingPics'><img src={bodybuilding}></img><img src={powerlifting}></img></div>
                     <div className='trainingTitles'><p className='left'>Bodybuilding</p><p className='right'>Powerlifting</p></div>
                     <div className='trainingPics'><img src={sc}></img><img src={cardio}></img></div>
                     <div className='trainingTitles'><p className='left'>Strength and Conditioning</p><p className='right'>Cardio</p></div>
                 </div>
-                <button className='startSearching'>Start Searching for Personal Trainers Now</button>
+                
             </div>
             <div className='basicInfoRow'>
                 <img className='profilePic'></img><br></br>
@@ -41,6 +41,7 @@ function SignUp() {
                 <label>Gender</label><br></br>
                 <input className="gender"  type='text'></input>
                 </div>
+                <button className='startSearching'>Start Searching for Personal Trainers Now</button>
             </div>
             </div>
         </div>
