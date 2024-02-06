@@ -1,0 +1,142 @@
+.signUpPage {
+    text-align: center;
+    background-color: #91D7A4;
+    height:100vh;
+}
+.body {
+    position:relative;
+    display:flex;
+    
+}
+.title {
+    font-size:14vh;
+    color:white;
+    
+    
+    
+}
+.personalisationRow {
+    width:55%;
+    position:relative;
+    text-align: center;
+}
+
+.basicInfoRow {
+    width:45%;
+    position:relative;
+    text-align: center;
+}
+
+.profilePic {
+    
+    top:10%;
+    border-radius: 50%;
+    width:32vh;
+    height:32vh;
+    background: rgb(186, 173, 173);
+    border: 1px solid black;
+    margin-top:-12%;
+}
+
+.inputsDiv {
+    
+    margin-top: 5%;
+
+}
+
+.addProfilePic {
+    width:7vh;
+    height:7vh;
+    font-size:30px;
+    border-radius:50%;
+}
+
+input{
+    
+    width:65%;
+    margin-bottom:4%;
+    font-size:4.5vh;
+    
+    
+}
+
+label {
+    font-size:3vh;
+    margin-right:10px;
+    color:white
+    
+}
+
+
+
+.experienceButtons button {
+    width:27%;
+    font-size:5vh;
+    margin-left: 2%;
+    margin-right: 2%;
+    color:white;
+    
+}
+
+.experienceButtons .beginner {
+    background-color: green;
+}
+
+.experienceButtons .intermediate {
+    background-color: orange;
+}
+
+.experienceButtons .advanced {
+    background-color: red;
+}
+
+.startSearching {
+    width:80%;
+    background-color: crimson;
+    color:white;
+    font-size: 5vh;
+    padding:2px;
+}
+
+.trainingType {
+    margin-top:1%;
+}
+
+
+
+.trainingPics{
+    width:100%;
+    
+    
+    
+    
+}
+
+.trainingTitles {
+    display:flex;
+    padding-bottom:6px;
+    
+}
+
+.trainingTitles p {
+    width:50%;
+    margin: 0;
+    color:rgb(0, 0, 0);
+    -webkit-text-stroke-width: 0.5px; 
+    -webkit-text-stroke-color: rgb(7, 51, 14); 
+}
+
+.trainingPics img {
+    
+    width:30%;
+    margin-right:3%;
+    margin-left:3%;
+}
+
+.trainingTitles .left {
+    margin-left:15%;
+}
+
+.trainingTitles .right {
+    margin-right:15%;
+}

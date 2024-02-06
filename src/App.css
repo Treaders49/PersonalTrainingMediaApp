@@ -1,0 +1,203 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.App-header {
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image: radial-gradient(circle at center center, #444cf7, #e5e5f7), repeating-radial-gradient(circle at center center, #444cf7, #444cf7, 10px, transparent 20px, transparent 10px);
+  background-blend-mode: multiply;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+
+.picDiv {
+  text-align:center;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  background-color: black;
+  justify-content: center;
+}
+
+
+}
+.trainerDiv, .clientDiv {
+  
+  width: 48%;
+  height: 100%;
+  overflow:hidden;
+  position:relative;
+  justify-content: center;
+  align-items:center;
+ 
+}
+
+.pics {
+  width:100%;
+  
+  opacity: 0.95;
+  transition: opacity 1.5s ease;
+}
+
+.back, .backHovered {
+  position: absolute;
+  top:8%;
+  left:2.5vw;
+  text-align:center;
+  background: white;
+  opacity: 0;
+  width:70%;
+  transition:500ms;
+  border-radius:40px;
+  
+  box-shadow: 0px 0px 8px 3px black;
+  padding-left:10%;
+  padding-right:10%;
+  padding-bottom:5%;
+
+}
+
+.back .loginTitle ,.backHovered .loginTitle  {
+  margin-top:10px;
+  color:rgb(45, 43, 43);
+  border-bottom: 2px solid rgb(45, 43, 43);
+  font-family: "Nova Flat";
+}
+
+.loginInputs{
+  font-size: 24px;
+  padding-left:10px;
+  padding:5px;
+  background-color: grey;
+  border: 2px solid black;
+  border-radius:5px;
+  font-family: "Nova Flat";
+  margin-bottom:40px;
+}
+
+
+
+.signUpText  {
+  font-family: "Nova Flat";
+  color:rgb(45, 43, 43);
+}
+
+.backHovered {
+  opacity:1;
+}
+
+
+
+
+
+
+
+.picshovered {
+  opacity:0;
+  width:100%;
+  transition: opacity 1.5s ease;
+}
+
+.titleshovered {
+  opacity:0;
+  transition:500ms;
+}
+
+.loginLogo {
+  width:40%;
+  margin-top:10px;
+}
+
+.loginButton {
+  font-size: 24px;
+  background-color: black;
+  box-shadow: 0px 0px 8px 4px grey;
+  color:white;
+  width:80%;
+  border-radius:5px;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+.clientPic:hover ~ .clientTitle {
+  
+  display:none;
+
+}
+
+.clientDiv {
+  padding-left:10px;
+  background-color: rgb(1, 61, 1);
+}
+
+.trainerDiv {
+  padding-right:10px;
+  background-color: #040223;
+}
+
+
+
+
+
+.titles, .titleshovered {
+  position:absolute;
+  width:35%;
+  -webkit-text-stroke-width: 1px; 
+   
+  text-shadow: 2px 2px 4px black;
+  border-radius:60px;
+  
+  font-weight:9000;
+  
+  text-align:center;
+  padding:20px;
+  font-size: 3vw;
+  font-family:'Mate SC';
+  left:30%;
+  transition:500ms;
+}
+
+.trainerTitle {
+  -webkit-text-stroke-color: rgb(19, 0, 129);
+  background: rgba(17, 40, 167, 0.5);
+  top:40%
+}
+
+.clientTitle {
+  -webkit-text-stroke-color: rgb(9, 111, 2);
+  background: rgba(5, 86, 15, 0.7);
+  top:36%
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 97vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+  
