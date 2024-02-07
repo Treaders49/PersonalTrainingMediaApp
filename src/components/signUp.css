@@ -16,6 +16,7 @@
     
 }
 .personalisationRow {
+    padding-top:4%;
     width:55%;
     position:relative;
     text-align: center;
@@ -68,7 +69,9 @@ label {
     
 }
 
-
+.experienceButtons {
+    padding-bottom:3%;
+}
 
 .experienceButtons button {
     width:27%;
@@ -79,6 +82,7 @@ label {
     margin-top:20px;
     
 }
+
 
 .experienceButtons .beginner {
     background-color: green;

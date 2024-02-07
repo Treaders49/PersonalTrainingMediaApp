@@ -30,7 +30,7 @@
 }
 .trainerDiv, .clientDiv {
   
-  width: 48%;
+  width: 50vw;
   height: 100%;
   overflow:hidden;
   position:relative;
@@ -133,12 +133,10 @@
 }
 
 .clientDiv {
-  padding-left:10px;
   background-color: rgb(1, 61, 1);
 }
 
 .trainerDiv {
-  padding-right:10px;
   background-color: #040223;
 }
 
