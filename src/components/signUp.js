@@ -48,11 +48,17 @@ function SignUp() {
                 <img className='profilePic'></img><br></br>
                 <button className='addProfilePic'>+</button><br></br>
                 <div className='inputsDiv'>
-                <label>Full Name</label><br></br>
+                <label>Full Name</label>
                 <input className="fullName" type='text'></input><br></br>
-                <label>Date Of Birth</label><br></br>
+                <label>Username</label>
+                <input className="fullName" type='text'></input><br></br>
+                <label>Date Of Birth</label>
                 <input className="dob" type='date'></input><br></br>
-                <label>Gender</label><br></br>
+                <label>Email</label>
+                <input className="fullName" type='text'></input><br></br>
+                <label>Password</label>
+                <input className="gender"  type='text'></input><br></br>
+                <label>Confirm Password</label>
                 <input className="gender"  type='text'></input>
                 </div>
                 <button className='startSearching'>Start Searching for Personal Trainers Now</button>
