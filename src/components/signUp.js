@@ -6,9 +6,23 @@ import sc from './pictures/sc.jpg'
 import './signUp.css';
 import { useState } from 'react';
 
+
 function SignUp() {
+    const [selectedExperience, setSelectedExperience] = useState("")
+
+    const changeExperience = (experienceSelected) => {
+        setSelectedExperience(experienceSelected)
+    };
+
+    const [selectedDiscipline, setSelectedDiscipline] = useState("")
+
+    const changeDiscipline = (disciplineSelected) => {
+        setSelectedDiscipline(disciplineSelected)
+    }
+    console.log(selectedExperience);
+
+
     return(
-        
         <div className='signUpPage'>
             <div className='title'><u>About You</u></div>
             <div className='body'>
@@ -16,17 +30,17 @@ function SignUp() {
             
                 <div className='experienceButtons'>
                     <label><u className='subheadings'>Fitness Experience</u></label><br></br>
-                    <button className='beginner'>Beginner</button>
-                    <button className='intermediate'>Intermediate</button>
-                    <button className='advanced'>Advanced</button>
+                    <button className={`beginner ${selectedExperience == 'beginner' ? 'selectedExperience' : "" }`} onClick={() => changeExperience('beginner')}>Beginner</button>
+                    <button className={`intermediate ${selectedExperience == 'intermediate' ? 'selectedExperience' : "" }`} onClick={() => changeExperience('intermediate')}>Intermediate</button>
+                    <button className={`advanced ${selectedExperience == 'advanced' ? 'selectedExperience' : "" }`} onClick={() => changeExperience('advanced')}>Advanced</button>
                 </div>
                 
                 <div className='trainingType'>
                 <label><u className='subheadings'>Type of Training</u></label><br></br>
-                    <div className='trainingPics'><img src={bodybuilding}></img><img src={powerlifting}></img></div>
-                    <div className='trainingTitles'><p className='left'>Bodybuilding</p><p className='right'>Powerlifting</p></div>
-                    <div className='trainingPics'><img src={sc}></img><img src={cardio}></img></div>
-                    <div className='trainingTitles'><p className='left'>Strength and Conditioning</p><p className='right'>Cardio</p></div>
+                    <div className='trainingPics' ><img src={bodybuilding} className={`${selectedDiscipline == 'bodybuilding' ? 'selectedDiscipline' : ''}`} onClick={() => changeDiscipline('bodybuilding')}></img><img src={powerlifting} className={`${selectedDiscipline == 'powerlifting' ? 'selectedDiscipline' : ''}`} onClick={() => changeDiscipline('powerlifting')}></img></div>
+                    <div className='trainingTitles' ><p className='left'>Bodybuilding</p><p className='right'>Powerlifting</p></div>
+                    <div className='trainingPics' ><img src={sc} className={`${selectedDiscipline == 'sandc' ? 'selectedDiscipline' : ''}`} onClick={() => changeDiscipline('sandc')}></img><img src={cardio} className={`${selectedDiscipline == 'cardio' ? 'selectedDiscipline' : ''}`} onClick={() => changeDiscipline('cardio')}></img></div>
+                    <div className='trainingTitles' ><p className='left'>Strength and Conditioning</p><p className='right'>Cardio</p></div>
                 </div>
                 
             </div>

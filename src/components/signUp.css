@@ -32,8 +32,8 @@
     
     top:10%;
     border-radius: 50%;
-    width:32vh;
-    height:32vh;
+    width:16vw;
+    height:16vw;
     background: rgb(186, 173, 173);
     border: 1px solid black;
     margin-top:-12%;
@@ -75,12 +75,16 @@ label {
 
 .experienceButtons button {
     width:27%;
-    font-size:5vh;
+    font-size:2vw;
     margin-left: 2%;
     margin-right: 2%;
     color:white;
     margin-top:20px;
     
+}
+
+.selectedExperience, .selectedDiscipline {
+    border: 10px solid rgb(185, 22, 190);
 }
 
 
