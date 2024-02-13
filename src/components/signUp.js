@@ -6,8 +6,11 @@ import sc from './pictures/sc.jpg'
 import './signUp.css';
 import { useState } from 'react';
 
+import { imageDb } from './firebaseConfig';
 
 function SignUp() {
+    const [img, setImg] = useState('')
+
     const [selectedExperience, setSelectedExperience] = useState("")
 
     const changeExperience = (experienceSelected) => {
@@ -20,7 +23,9 @@ function SignUp() {
         setSelectedDiscipline(disciplineSelected)
     }
     console.log(selectedExperience);
-
+    document.getElementById("profilePic").src = URL.createObjectURL(img);
+    console.log(document.getElementById("profilePic").src);
+    console.log(img);
 
     return(
         <div className='signUpPage'>
@@ -45,8 +50,9 @@ function SignUp() {
                 
             </div>
             <div className='basicInfoRow'>
-                <img className='profilePic'></img><br></br>
-                <button className='addProfilePic'>+</button><br></br>
+                <img className='profilePic' id="profilePic"></img><br></br>
+                <button className='addProfilePic' onClick={()=> document.getElementById("chooseFile").click()}>+</button>
+                <input id='chooseFile' onChange={(e)=> setImg(e.target.files[0])} type="file"></input>
                 <div className='inputsDiv'>
                 <label>Full Name</label>
                 <input className="fullName" type='text'></input><br></br>

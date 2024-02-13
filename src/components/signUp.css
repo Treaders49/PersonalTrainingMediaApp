@@ -61,6 +61,10 @@ input{
     
 }
 
+#chooseFile {
+    display:none;
+}
+
 
 label {
     font-size:3vh;
