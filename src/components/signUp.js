@@ -5,6 +5,7 @@ import powerlifting from './pictures/powerlifting.jpg'
 import sc from './pictures/sc.jpg'
 import './signUp.css';
 import { useState } from 'react';
+import axios from 'axios';
 
 
 
@@ -38,6 +39,9 @@ function SignUp() {
 
         if ((password === confirmPassword) && (img)) {
             
+            axios.post("http://localhost:8000/newAccount", {fullname:fullname, username: username, email:email, dob:dob, password: password}).then(response => {
+          
+            });
             const imageRef = ref(imageDb, `profilePics/${username}`)
             uploadBytes(imageRef, img).then(() => {
                 alert(fullname, username, email, dob, password, confirmPassword);
