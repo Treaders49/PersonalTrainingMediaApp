@@ -6,7 +6,12 @@ import sc from './pictures/sc.jpg'
 import './signUp.css';
 import { useState } from 'react';
 
+
+
 import { imageDb } from './firebaseConfig';
+import { ref, uploadBytes } from 'firebase/storage';
+
+
 
 function SignUp() {
     const [img, setImg] = useState('')
@@ -22,11 +27,43 @@ function SignUp() {
     const changeDiscipline = (disciplineSelected) => {
         setSelectedDiscipline(disciplineSelected)
     }
-    console.log(selectedExperience);
-    document.getElementById("profilePic").src = URL.createObjectURL(img);
-    console.log(document.getElementById("profilePic").src);
-    console.log(img);
 
+    const [fullname, setFullName] = useState("");
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [dob, setDob] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const createAccount = () => {
+
+        if ((password === confirmPassword) && (img)) {
+            
+            const imageRef = ref(imageDb, `profilePics/${username}`)
+            uploadBytes(imageRef, img).then(() => {
+                alert(fullname, username, email, dob, password, confirmPassword);
+            });
+        }
+        else {
+            if (password != confirmPassword) {
+                alert("passwords dont match")
+            }
+            else {
+                alert("please add a profile picture")
+            }
+        }
+
+        
+
+    }
+    console.log(selectedExperience);
+    if (img) {
+        document.getElementById("profilePic").src = URL.createObjectURL(img);
+        console.log(document.getElementById("profilePic").src);
+    }
+    
+    
+    console.log(img);
+    console.log(fullname);
     return(
         <div className='signUpPage'>
             <div className='title'><u>About You</u></div>
@@ -51,23 +88,30 @@ function SignUp() {
             </div>
             <div className='basicInfoRow'>
                 <img className='profilePic' id="profilePic"></img><br></br>
-                <button className='addProfilePic' onClick={()=> document.getElementById("chooseFile").click()}>+</button>
+                <button className='addProfilePic' onClick={()=> document.getElementById("chooseFile").click()}>+</button><br></br>
                 <input id='chooseFile' onChange={(e)=> setImg(e.target.files[0])} type="file"></input>
                 <div className='inputsDiv'>
-                <label>Full Name</label>
-                <input className="fullName" type='text'></input><br></br>
-                <label>Username</label>
-                <input className="fullName" type='text'></input><br></br>
-                <label>Date Of Birth</label>
-                <input className="dob" type='date'></input><br></br>
-                <label>Email</label>
-                <input className="fullName" type='text'></input><br></br>
-                <label>Password</label>
-                <input className="gender"  type='text'></input><br></br>
-                <label>Confirm Password</label>
-                <input className="gender"  type='text'></input>
+                <div className="formLabels">
+                <label>Full Name</label><br></br>
+                <label>Username</label><br></br>
+                <label>Date Of Birth</label><br></br>
+                <label>Email</label><br></br>
+                <label>Password</label><br></br>
+                <label>Confirm Password</label><br></br>
                 </div>
-                <button className='startSearching'>Start Searching for Personal Trainers Now</button>
+                <div className="formInputs">
+                <input className="fullName" type='text' onChange={(e) => setFullName(e.target.value)}></input><br></br>
+                <input className="username" type='text' onChange={(e) => setUsername(e.target.value)}></input><br></br>
+                <input className="dob" type='date' onChange={(e) => setDob(e.target.value)}></input><br></br>
+                <input className="email" type='text' onChange={(e) => setEmail(e.target.value)}></input><br></br>
+                <input className="password"  type='password' onChange={(e) => setPassword(e.target.value)}></input><br></br>
+                <input className="confirm"  type='password' onChange={(e) => setConfirmPassword(e.target.value)}></input>
+                </div>
+                
+                
+                
+                </div>
+                <button className='startSearching' onClick={() => createAccount()}>Start Searching for Personal Trainers Now</button>
             </div>
             </div>
         </div>
