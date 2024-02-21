@@ -37,22 +37,30 @@ function SignUp() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const createAccount = () => {
 
-        if ((password === confirmPassword) && (img)) {
+        if ((password === confirmPassword) && (img) && (selectedExperience) && (selectedDiscipline)) {
             
-            axios.post("http://localhost:8000/newAccount", {fullname:fullname, username: username, email:email, dob:dob, password: password}).then(response => {
+            axios.post("http://localhost:8000/newAccount", {fullname:fullname, username: username, email: email, dob: dob, password: password, selectedExperience: selectedExperience, selectedDiscipline: selectedDiscipline}).then(response => {
           
             });
             const imageRef = ref(imageDb, `profilePics/${username}`)
             uploadBytes(imageRef, img).then(() => {
-                alert(fullname, username, email, dob, password, confirmPassword);
+                alert(fullname, username, email, dob, password, confirmPassword, selectedExperience, selectedDiscipline);
             });
         }
         else {
             if (password != confirmPassword) {
                 alert("passwords dont match")
             }
-            else {
+            if (! img) {
                 alert("please add a profile picture")
+            }
+
+            if (! selectedExperience) {
+                alert("please select an experience level");
+            }
+
+            if (! selectedDiscipline) {
+                alert("please select a type of training");
             }
         }
 
